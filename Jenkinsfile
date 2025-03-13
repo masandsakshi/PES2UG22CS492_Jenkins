@@ -2,9 +2,24 @@ pipeline {
     agent any
     
     stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/masandsakshi/PES2UG22CS492_Jenkins.git'
+            }
+        }
+        
+        stage('Check Files') {
+            steps {
+                script {
+                    sh 'ls -la'  // Debugging step to check files in workspace
+                }
+            }
+        }
+        
         stage('Build') {
             steps {
                 script {
+                    sh 'find . -name "hello.cpp"' // Ensure hello.cpp is found
                     sh 'g++ -o PES2UG22CS492-1 hello.cpp' // Compile the C++ file
                 }
             }
