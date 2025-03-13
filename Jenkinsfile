@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh 'g++ -o YOUR_SRN-1 main.cpp' // Compile the C++ file
+                    sh 'g++ -o PES2UG22CS492-1 main.cpp' // Compile the C++ file
                 }
             }
         }
@@ -13,7 +13,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    sh './YOUR_SRN-1' // Run the compiled C++ file and print output
+                    sh './PES2UG22CS492-1' // Run the compiled C++ file and print output
                 }
             }
         }
