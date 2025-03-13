@@ -19,8 +19,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh 'find . -name "hello.cpp"' // Ensure hello.cpp is found
-                    sh 'g++ -o PES2UG22CS492-1 hello.cpp' // Compile the C++ file
+                    sh 'g++ -o PES2UG22CS492-1 main/hello.cpp' // Compile the C++ file
                 }
             }
         }
